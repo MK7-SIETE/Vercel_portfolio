@@ -1,7 +1,7 @@
-const EMAILJS_PUBLIC_KEY       = 'YOUR_PUBLIC_KEY';
-const EMAILJS_SERVICE_ID       = 'YOUR_SERVICE_ID';
-const NOTIFICATION_TEMPLATE_ID = 'YOUR_NOTIFICATION_TEMPLATE_ID';
-const AUTOREPLY_TEMPLATE_ID    = 'YOUR_AUTOREPLY_TEMPLATE_ID';
+const EMAILJS_PUBLIC_KEY       = 'IV6EkLZ-dsih3bWDn';
+const EMAILJS_SERVICE_ID       = 'service_7ou24do';
+const NOTIFICATION_TEMPLATE_ID = 'template_hqzo3tx';
+const AUTOREPLY_TEMPLATE_ID    = 'template_nzzdl9d';
 
 document.addEventListener('DOMContentLoaded', function () {
 
