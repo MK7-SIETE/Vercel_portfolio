@@ -1,12 +1,12 @@
-/**
- * CONTACT.JS - Contact form handler
- * Submits to /api/contact (Vercel Serverless Function)
- * which sends notification + auto-reply via EmailJS
- */
+const EMAILJS_PUBLIC_KEY       = 'YOUR_PUBLIC_KEY';
+const EMAILJS_SERVICE_ID       = 'YOUR_SERVICE_ID';
+const NOTIFICATION_TEMPLATE_ID = 'YOUR_NOTIFICATION_TEMPLATE_ID';
+const AUTOREPLY_TEMPLATE_ID    = 'YOUR_AUTOREPLY_TEMPLATE_ID';
 
 document.addEventListener('DOMContentLoaded', function () {
 
-  // ── Fade-in animations ────────────────────────────────────────────────
+  emailjs.init(EMAILJS_PUBLIC_KEY);
+
   const contactSection = document.querySelector('#contact');
   if (contactSection) {
     contactSection.style.opacity   = '0';
@@ -18,18 +18,6 @@ document.addEventListener('DOMContentLoaded', function () {
     }, 100);
   }
 
-  const formContainer = document.querySelector('.contact-form-container');
-  if (formContainer) {
-    formContainer.style.opacity   = '0';
-    formContainer.style.transform = 'scale(0.95)';
-    setTimeout(() => {
-      formContainer.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-      formContainer.style.opacity    = '1';
-      formContainer.style.transform  = 'scale(1)';
-    }, 400);
-  }
-
-  // ── Form submission ───────────────────────────────────────────────────
   const contactForm = document.getElementById('contactForm');
   if (!contactForm) return;
 
@@ -45,6 +33,7 @@ document.addEventListener('DOMContentLoaded', function () {
       showToast('Please fill in all required fields.', 'error');
       return;
     }
+
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
       showToast('Please enter a valid email address.', 'error');
@@ -53,44 +42,40 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const submitBtn    = this.querySelector('.submit-btn') || this.querySelector('button[type="submit"]');
     const originalHTML = submitBtn.innerHTML;
-
     submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
     submitBtn.disabled  = true;
 
+    const templateParams = {
+      from_name:  name,
+      from_email: email,
+      reply_to:   email,
+      subject:    subject || '(No subject)',
+      message:    message,
+    };
+
     try {
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name, email, subject, message }),
-      });
+      await emailjs.send(EMAILJS_SERVICE_ID, NOTIFICATION_TEMPLATE_ID, templateParams);
+      await emailjs.send(EMAILJS_SERVICE_ID, AUTOREPLY_TEMPLATE_ID, templateParams);
 
-      const data = await response.json();
+      submitBtn.innerHTML        = '<i class="fas fa-check"></i> Message Sent!';
+      submitBtn.style.background = 'linear-gradient(135deg, #27ae60, #2ecc71)';
+      showToast('Message sent! Check your inbox for a confirmation email.', 'success');
 
-      if (response.ok && data.success) {
-        submitBtn.innerHTML        = '<i class="fas fa-check"></i> Message Sent!';
-        submitBtn.style.background = 'linear-gradient(135deg, #27ae60, #2ecc71)';
-        showToast('Message sent! Check your inbox for a confirmation email.', 'success');
-
-        setTimeout(() => {
-          contactForm.reset();
-          submitBtn.innerHTML        = originalHTML;
-          submitBtn.style.background = '';
-          submitBtn.disabled         = false;
-        }, 3000);
-      } else {
-        showToast(data.error || 'Something went wrong. Please try again.', 'error');
-        submitBtn.innerHTML = originalHTML;
-        submitBtn.disabled  = false;
-      }
+      setTimeout(() => {
+        contactForm.reset();
+        submitBtn.innerHTML        = originalHTML;
+        submitBtn.style.background = '';
+        submitBtn.disabled         = false;
+      }, 3000);
 
     } catch (err) {
-      showToast('Could not reach the server. Please check your connection.', 'error');
+      console.error('EmailJS error:', err);
+      showToast('Failed to send message. Please try again.', 'error');
       submitBtn.innerHTML = originalHTML;
       submitBtn.disabled  = false;
     }
   });
 
-  // ── Real-time field validation ────────────────────────────────────────
   const inputs = contactForm.querySelectorAll('input, textarea');
   inputs.forEach(input => {
     input.addEventListener('blur', function () {
@@ -106,7 +91,6 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 
-// ── Toast notification helper ─────────────────────────────────────────────
 function showToast(message, type) {
   const existing = document.querySelector('.form-toast');
   if (existing) existing.remove();
@@ -115,12 +99,11 @@ function showToast(message, type) {
   toast.className = 'form-toast';
   toast.innerHTML = '<i class="fas fa-' + (type === 'success' ? 'check-circle' : 'exclamation-circle') + '"></i> ' + message;
 
-  const isSuccess = type === 'success';
   Object.assign(toast.style, {
     position:     'fixed',
     bottom:       '2rem',
     right:        '2rem',
-    background:   isSuccess ? 'linear-gradient(135deg,#27ae60,#2ecc71)' : 'linear-gradient(135deg,#e74c3c,#c0392b)',
+    background:   type === 'success' ? 'linear-gradient(135deg,#27ae60,#2ecc71)' : 'linear-gradient(135deg,#e74c3c,#c0392b)',
     color:        '#fff',
     padding:      '1rem 1.5rem',
     borderRadius: '0.8rem',
@@ -133,13 +116,6 @@ function showToast(message, type) {
     gap:          '0.6rem',
     maxWidth:     'calc(100vw - 4rem)',
   });
-
-  if (!document.getElementById('toast-style')) {
-    const style = document.createElement('style');
-    style.id = 'toast-style';
-    style.textContent = '@keyframes slideInToast{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}';
-    document.head.appendChild(style);
-  }
 
   document.body.appendChild(toast);
   setTimeout(() => toast.remove(), 5000);
