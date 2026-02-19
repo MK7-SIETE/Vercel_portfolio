@@ -1,0 +1,263 @@
+/**
+ * ABOUT.CSS - Styles specific to the about page
+ * Contains: About section layout, profile picture, experience/education cards
+ */
+
+/* ===== ABOUT SECTION ===== */
+#about {
+  position: relative;
+}
+
+/* Main container for about section */
+.section-container {
+  display: grid;
+  grid-template-columns: 350px 1fr;
+  gap: 5rem;
+  align-items: start;
+  margin-top: 2rem;
+}
+
+/* About picture container */
+#about .section__pic-container {
+  display: flex;
+  height: 350px;
+  width: 350px;
+  margin: 0;
+  justify-content: center;
+  align-items: flex-start;
+  position: sticky;
+  top: 20vh;
+}
+
+/* About picture styling */
+.about-pic {
+  border-radius: 1.5rem;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  box-shadow: 0 10px 40px var(--shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-pic:hover {
+  transform: scale(1.03);
+  box-shadow: 0 15px 50px var(--shadow);
+}
+
+/* About details container */
+.about-details-container {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  flex: 1;
+}
+
+/* Container for experience and education cards */
+.about-containers {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin-bottom: 2rem;
+  margin-top: 0;
+}
+
+/* Text container for about description */
+.text-container {
+  margin-top: 2rem;
+}
+
+.text-container p {
+  line-height: 1.9;
+  color: var(--text-secondary);
+  text-align: left;
+  margin-bottom: 1.5rem;
+  font-size: 1.05rem;
+}
+
+.text-container p:first-child {
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: var(--text-color);
+}
+
+.text-container p:last-child {
+  margin-bottom: 0;
+}
+
+.about-detail {
+  margin-top: 1.5rem;
+  padding: 1.5rem;
+  background: var(--card-bg);
+  border-left: 4px solid var(--button-bg);
+  border-radius: 0.8rem;
+  box-shadow: 0 2px 8px var(--shadow);
+  transition: all 0.3s ease;
+}
+
+.about-detail:hover {
+  transform: translateX(5px);
+  box-shadow: 0 4px 12px var(--shadow);
+}
+
+.about-detail strong {
+  color: var(--button-bg);
+  display: block;
+  margin-bottom: 0.8rem;
+  font-size: 1.15rem;
+  font-weight: 600;
+}
+
+/* ===== RESPONSIVE DESIGN FOR ABOUT PAGE ===== */
+
+/* iPad Pro and smaller tablets (1024px) */
+@media screen and (max-width: 1024px) {
+  .section-container {
+    grid-template-columns: 320px 1fr;
+    gap: 3rem;
+  }
+  
+  #about .section__pic-container {
+    height: 320px;
+    width: 320px;
+  }
+  
+  .about-containers {
+    gap: 1.5rem;
+  }
+}
+
+/* Tablets and large phones (768px) */
+@media screen and (max-width: 768px) {
+  .section-container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  #about .section__pic-container {
+    height: 300px;
+    width: 300px;
+    position: static;
+    margin: 0 auto;
+  }
+  
+  .about-containers {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .details-container {
+    padding: 1.5rem;
+  }
+  
+  .text-container p {
+    font-size: 0.95rem;
+  }
+  
+  .about-detail {
+    padding: 1.2rem;
+  }
+}
+
+/* iPhone 14 Pro Max, 14 Plus (430px) */
+@media screen and (max-width: 430px) {
+  #about .section__pic-container {
+    height: 280px;
+    width: 280px;
+  }
+  
+  .about-containers {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .details-container {
+    padding: 1.2rem;
+  }
+  
+  .details-container h3 {
+    font-size: 1.1rem;
+  }
+  
+  .details-container p {
+    font-size: 0.9rem;
+  }
+  
+  .text-container {
+    margin-top: 1.5rem;
+  }
+  
+  .text-container p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+}
+
+/* iPhone 14 Pro, 13 Pro, 12 Pro (393px) */
+@media screen and (max-width: 393px) {
+  #about .section__pic-container {
+    height: 260px;
+    width: 260px;
+  }
+}
+
+/* iPhone 14, 13, 12 (390px) */
+@media screen and (max-width: 390px) {
+  #about .section__pic-container {
+    height: 250px;
+    width: 250px;
+  }
+}
+
+/* iPhone 13 mini, 12 mini (375px) */
+@media screen and (max-width: 375px) {
+  #about .section__pic-container {
+    height: 240px;
+    width: 240px;
+  }
+  
+  .details-container {
+    padding: 1rem;
+  }
+  
+  .details-container h3 {
+    font-size: 1rem;
+  }
+  
+  .details-container p {
+    font-size: 0.85rem;
+  }
+  
+  .text-container p {
+    font-size: 0.85rem;
+  }
+}
+
+/* iPhone SE (1st gen) (320px) */
+@media screen and (max-width: 320px) {
+  #about .section__pic-container {
+    height: 220px;
+    width: 220px;
+  }
+  
+  .about-containers {
+    gap: 1rem;
+  }
+  
+  .details-container {
+    padding: 0.9rem;
+  }
+  
+  .details-container h3 {
+    font-size: 0.95rem;
+  }
+  
+  .details-container p {
+    font-size: 0.8rem;
+  }
+  
+  .text-container p {
+    font-size: 0.8rem;
+    line-height: 1.5;
+  }
+}

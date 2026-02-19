@@ -1,0 +1,7 @@
+{
+  "name": "betsaleel-mukuba-portfolio",
+  "version": "1.0.0",
+  "description": "Betsaleel Mukuba Portfolio - Deployed on Vercel",
+  "engines": { "node": ">=18" },
+  "dependencies": {}
+}

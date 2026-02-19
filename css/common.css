@@ -1,0 +1,630 @@
+/**
+ * COMMON.CSS - Shared styles across all pages
+ * Contains: Color variables, fonts, navigation, footer, buttons, and general layout
+ */
+
+/* ===== GOOGLE FONTS ===== */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+
+/* ===== CSS VARIABLES (COLOR SCHEME) ===== */
+:root {
+  /* Light mode colors - Clean white with vibrant blue */
+  --bg-color: #FFFFFF;
+  --bg-gradient: linear-gradient(135deg, #FFFFFF 0%, #F0F8FF 50%, #E3F2FD 100%);
+  --text-color: #1A1A2E;
+  --text-secondary: #4A5568;
+  --nav-bg: rgba(255, 255, 255, 0.95);
+  --nav-text: #1A1A2E;
+  --card-bg: rgba(255, 255, 255, 0.9);
+  --card-border: rgba(52, 152, 219, 0.2);
+  --button-bg: #3498DB;
+  --button-hover: #2980B9;
+  --footer-bg: rgba(255, 255, 255, 0.95);
+  --shadow: rgba(0, 0, 0, 0.08);
+  --input-bg: rgba(255, 255, 255, 0.95);
+  --input-border: rgba(52, 152, 219, 0.3);
+  --input-focus: #3498DB;
+  
+  /* Additional variables for consistency */
+  --primary-color: #1A1A2E;
+  --secondary-color: #4A5568;
+  --container-bg: rgba(255, 255, 255, 0.9);
+  --border: 2px solid rgba(52, 152, 219, 0.2);
+  --border-color: rgba(52, 152, 219, 0.2);
+  
+  /* Dynamic accents */
+  --accent-glow: rgba(52, 152, 219, 0.1);
+  --highlight: #EBF8FF;
+}
+
+/* Dark mode color scheme - Medium-dark with softer grays (comfortable for eyes) */
+[data-theme="dark"] {
+  --bg-color: #1a1d2e;
+  --bg-gradient: linear-gradient(135deg, #1a1d2e 0%, #252936 40%, #2d3348 100%);
+  --text-color: #f5f5f7;
+  --text-secondary: #b4b8c5;
+  --nav-bg: rgba(26, 29, 46, 0.95);
+  --nav-text: #f5f5f7;
+  --card-bg: rgba(37, 41, 54, 0.7);
+  --card-border: rgba(82, 179, 255, 0.25);
+  --button-bg: #52B3FF;
+  --button-hover: #3a9ae0;
+  --footer-bg: rgba(26, 29, 46, 0.98);
+  --shadow: rgba(0, 0, 0, 0.5);
+  --input-bg: rgba(37, 41, 54, 0.85);
+  --input-border: rgba(82, 179, 255, 0.35);
+  --input-focus: #52B3FF;
+  
+  /* Additional variables for consistency */
+  --primary-color: #f5f5f7;
+  --secondary-color: #b4b8c5;
+  --container-bg: rgba(37, 41, 54, 0.7);
+  --border: 2px solid rgba(82, 179, 255, 0.25);
+  --border-color: rgba(82, 179, 255, 0.25);
+  
+  /* Dynamic accents */
+  --accent-glow: rgba(82, 179, 255, 0.15);
+  --highlight: rgba(82, 179, 255, 0.1);
+}
+
+/* ===== GLOBAL RESET ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ===== BODY AND HTML SETUP ===== */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: var(--bg-gradient);
+  background-attachment: fixed;
+  color: var(--text-color);
+  transition: background 0.5s ease, color 0.3s ease;
+}
+
+/* ===== TYPOGRAPHY ===== */
+p {
+  color: var(--text-color);
+}
+
+h1, h2, h3 {
+  color: var(--text-color);
+}
+
+/* ===== SMOOTH TRANSITIONS ===== */
+a,
+.btn {
+  transition: all 0.3s ease;
+}
+
+/* ===== RESPONSIVE IMAGES ===== */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ===== DESKTOP NAVIGATION ===== */
+nav,
+.nav-links {
+  display: flex;
+}
+
+nav {
+  justify-content: space-between;
+  align-items: center;
+  height: 17vh;
+  padding: 0 3rem;
+  background: transparent;
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  box-shadow: 0 2px 20px rgba(0, 217, 255, 0.1);
+  border-bottom: 1px solid rgba(0, 217, 255, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+/* Slight background tint for better readability */
+nav::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--bg-color);
+  opacity: 0.7;
+  z-index: -1;
+}
+
+/* Add glow effect on scroll */
+nav.scrolled {
+  box-shadow: 0 4px 30px rgba(0, 217, 255, 0.2);
+  border-bottom-color: rgba(0, 217, 255, 0.3);
+}
+
+/* Navigation right section (links + theme toggle) */
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+/* Navigation links styling */
+.nav-links {
+  gap: 2rem;
+  list-style: none;
+  font-size: 1.2rem;
+}
+
+.nav-links a {
+  color: var(--nav-text);
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+/* Active page indicator */
+.nav-links a.active {
+  background: var(--button-bg);
+  color: white;
+  box-shadow: 0 3px 10px var(--shadow);
+}
+
+/* Navigation link hover effect */
+.nav-links a:hover {
+  background: var(--card-bg);
+  color: var(--button-bg);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px var(--shadow);
+}
+
+/* Logo styling with image */
+.logo {
+  display: flex;
+  align-items: center;
+  height: 50px;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.logo img {
+  height: 100%;
+  width: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 8px var(--accent-glow));
+  transition: filter 0.3s ease;
+}
+
+.logo:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+}
+
+.logo:hover img {
+  filter: drop-shadow(0 4px 12px var(--button-bg));
+}
+
+/* ===== THEME TOGGLE BUTTON ===== */
+.theme-toggle {
+  background: var(--card-bg);
+  border: 2px solid var(--card-border);
+  color: var(--text-color);
+  padding: 0.7rem 1rem;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  width: 45px;
+  height: 45px;
+}
+
+.theme-toggle:hover {
+  background: var(--button-bg);
+  color: white;
+  transform: rotate(20deg);
+}
+
+/* Mobile theme toggle button */
+.theme-toggle-mobile {
+  background: var(--card-bg);
+  border: 2px solid var(--card-border);
+  color: var(--text-color);
+  padding: 0.7rem 1.5rem;
+  border-radius: 2rem;
+  cursor: pointer;
+  font-size: 1.1rem;
+  margin-top: 1rem;
+  width: 100%;
+}
+
+/* ===== HAMBURGER MENU (MOBILE NAVIGATION) ===== */
+#hamburger-nav {
+  display: none;
+}
+
+.hamburger-menu {
+  position: relative;
+  display: inline-block;
+}
+
+/* Modern circular morphing icon */
+.hamburger-icon {
+  width: 40px;
+  height: 40px;
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10001;
+}
+
+/* Circle container - only one span needed */
+.hamburger-icon span {
+  position: absolute;
+  width: 36px;
+  height: 36px;
+  border: 3px solid var(--nav-text);
+  border-radius: 50%;
+  transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  box-shadow: 0 0 10px rgba(0, 217, 255, 0.3);
+}
+
+/* Inner rotating parts */
+.hamburger-icon span::before,
+.hamburger-icon span::after {
+  content: '';
+  position: absolute;
+  background: var(--nav-text);
+  border-radius: 2px;
+  transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+/* First line (horizontal) */
+.hamburger-icon span::before {
+  width: 18px;
+  height: 3px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Second line (vertical) */
+.hamburger-icon span::after {
+  width: 3px;
+  height: 18px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Animated state when open */
+.hamburger-icon.open span {
+  transform: rotate(180deg);
+  border-color: #00D9FF;
+  box-shadow: 0 0 20px rgba(0, 217, 255, 0.6);
+}
+
+.hamburger-icon.open span::before {
+  transform: translate(-50%, -50%) rotate(45deg);
+  background: #00D9FF;
+  width: 20px;
+}
+
+.hamburger-icon.open span::after {
+  transform: translate(-50%, -50%) rotate(45deg);
+  background: #00D9FF;
+  height: 20px;
+}
+
+/* Sliding drawer menu from right */
+.menu-links {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 280px;
+  height: 100vh;
+  background: var(--nav-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  padding: 6rem 0 2rem;
+  transition: right 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  box-shadow: -5px 0 30px var(--shadow);
+  z-index: 10000;
+  overflow-y: auto;
+  border-left: 1px solid var(--card-border);
+}
+
+/* Overlay backdrop */
+.menu-links::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  right: 280px;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  pointer-events: none;
+}
+
+.menu-links.open::before {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.menu-links a {
+  display: block;
+  padding: 1.2rem 2rem;
+  margin: 0.3rem 1rem;
+  text-align: left;
+  font-size: 1.1rem;
+  color: var(--nav-text);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border-radius: 0.8rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.menu-links a::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 4px;
+  height: 100%;
+  background: var(--button-bg);
+  transform: scaleY(0);
+  transition: transform 0.3s ease;
+}
+
+.menu-links a:hover {
+  background: var(--card-bg);
+  color: var(--button-bg);
+  transform: translateX(5px);
+  box-shadow: 0 3px 10px var(--shadow);
+}
+
+.menu-links a:hover::before {
+  transform: scaleY(1);
+}
+
+.menu-links li {
+  list-style: none;
+}
+
+/* Open state for mobile menu */
+.menu-links.open {
+  right: 0;
+}
+
+/* Animated hamburger icon when open */
+.hamburger-icon.open span:first-child {
+  transform: rotate(45deg) translate(8px, 8px);
+  background: var(--button-bg);
+}
+
+.hamburger-icon.open span:nth-child(2) {
+  opacity: 0;
+  transform: translateX(20px);
+}
+
+.hamburger-icon.open span:last-child {
+  transform: rotate(-45deg) translate(8px, -8px);
+  background: var(--button-bg);
+}
+
+/* ===== GENERAL SECTION LAYOUT ===== */
+section {
+  padding-top: 4vh;
+  min-height: 80vh;
+  margin: 0 10rem;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* ===== COMMON TEXT STYLES ===== */
+.section__text__p1 {
+  text-align: center;
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+}
+
+.title {
+  font-size: 3rem;
+  text-align: center;
+  margin: 1rem 0;
+  background: linear-gradient(45deg, #3498DB, #2980B9);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ===== ICONS ===== */
+.icon {
+  cursor: pointer;
+  height: 2rem;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.icon:hover {
+  transform: scale(1.2);
+}
+
+/* Make icons visible in dark mode (except contact icons) */
+[data-theme="dark"] .icon:not(.contact-icon):not(.email-icon) {
+  filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%);
+}
+
+/* Arrow icon styling */
+.arrow {
+  position: absolute;
+  right: -5rem;
+  bottom: 2.5rem;
+  filter: brightness(0) saturate(100%) invert(60%) sepia(88%) saturate(2476%) hue-rotate(182deg) brightness(95%) contrast(88%);
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.arrow:hover {
+  transform: scale(1.2);
+  filter: brightness(0) saturate(100%) invert(45%) sepia(98%) saturate(1567%) hue-rotate(182deg) brightness(90%) contrast(95%);
+}
+
+/* Arrow icon in dark mode */
+[data-theme="dark"] .arrow {
+  filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%) !important;
+}
+
+[data-theme="dark"] .arrow:hover {
+  filter: brightness(0) saturate(100%) invert(60%) sepia(88%) saturate(2476%) hue-rotate(182deg) brightness(95%) contrast(88%) !important;
+}
+
+/* ===== BUTTONS ===== */
+.btn-container {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+.btn {
+  font-weight: 600;
+  transition: all 0.3s ease;
+  padding: 1rem 2rem;
+  min-width: 10rem;
+  border-radius: 2rem;
+  font-size: 1rem;
+  cursor: pointer;
+  border: none;
+}
+
+/* Primary button (filled) */
+.btn-color-1 {
+  background: var(--button-bg);
+  color: rgb(27, 25, 25);
+  border: 2px solid var(--button-bg);
+}
+
+.btn-color-1:hover {
+  background: var(--button-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 20px var(--shadow);
+}
+
+/* Secondary button (outlined) */
+.btn-color-2 {
+  background: transparent;
+  color: var(--text-color);
+  border: 2px solid var(--button-bg);
+}
+
+.btn-color-2:hover {
+  background: var(--button-bg);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 20px var(--shadow);
+}
+
+/* ===== CARD/CONTAINER STYLING ===== */
+.details-container {
+  padding: 2rem;
+  flex: 1;
+  background: var(--card-bg);
+  backdrop-filter: blur(10px);
+  border-radius: 2rem;
+  border: 2px solid var(--card-border);
+  text-align: center;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.details-container::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.details-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px var(--shadow), 0 0 20px var(--accent-glow);
+  border-color: var(--button-bg);
+}
+
+.details-container:hover::before {
+  opacity: 1;
+}
+
+/* ===== FOOTER ===== */
+footer {
+  background: var(--footer-bg);
+  backdrop-filter: blur(10px);
+  padding: 2rem 2rem 2rem;
+  margin-top: 5rem;
+  border-top: 2px solid var(--card-border);
+}
+
+/* Social media links in footer */
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin: 1.5rem 0;
+  flex-wrap: wrap;
+}
+
+.social-links a {
+  color: var(--text-color);
+  font-size: 2rem;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: var(--card-bg);
+  border: 2px solid var(--card-border);
+}
+
+.social-links a:hover {
+  color: white;
+  background: var(--button-bg);
+  transform: translateY(-5px);
+  box-shadow: 0 5px 20px var(--shadow);
+}
+
+/* Copyright text */
+footer p {
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin-top: 1.5rem;
+}

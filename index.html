@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Meta tags for character encoding and viewport -->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="./assets/favicon.ico" />
+    <link rel="icon" type="image/png" href="./assets/favicon.png" />
+    
+    <!-- Page title -->
+    <title>Betsaleel Mukuba - Portfolio</title>
+    
+    <!-- CSS Files: Common styles + Page-specific styles + Responsive -->
+    <link rel="stylesheet" href="css/common.css" />
+    <link rel="stylesheet" href="css/home.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  </head>
+  
+  <body>
+    <!-- ===== DESKTOP NAVIGATION ===== -->
+    <nav id="desktop-nav">
+      <!-- Logo/Brand image -->
+      <div class="logo">
+        <img src="./assets/logo-circuit-bm.svg" alt="BM Circuit Logo" />
+      </div>
+      
+      <!-- Navigation links and theme toggle container -->
+      <div class="nav-right">
+        <!-- Navigation menu -->
+        <ul class="nav-links">
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="experience.html">Experience</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        
+        <!-- Dark/Light theme toggle button -->
+        <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">
+          <i class="fas fa-moon"></i>
+        </button>
+      </div>
+    </nav>
+    
+    <!-- ===== MOBILE HAMBURGER NAVIGATION ===== -->
+    <nav id="hamburger-nav">
+      <!-- Logo/Brand image for mobile -->
+      <div class="logo">
+        <img src="./assets/logo-circuit-bm.svg" alt="BM Circuit Logo" />
+      </div>
+      
+      <!-- Hamburger menu container -->
+      <div class="hamburger-menu">
+        <!-- Hamburger icon (three lines) -->
+        <div class="hamburger-icon" onclick="toggleMenu()">
+          <span></span>
+          
+          
+          
+        </div>
+        
+        <!-- Mobile dropdown menu -->
+        <div class="menu-links">
+          <li><a href="index.html" onclick="toggleMenu()">Home</a></li>
+          <li><a href="about.html" onclick="toggleMenu()">About</a></li>
+          <li><a href="experience.html" onclick="toggleMenu()">Experience</a></li>
+          <li><a href="projects.html" onclick="toggleMenu()">Projects</a></li>
+          <li><a href="contact.html" onclick="toggleMenu()">Contact</a></li>
+          <li>
+            <!-- Theme toggle button for mobile -->
+            <button class="theme-toggle-mobile" onclick="toggleTheme()" aria-label="Toggle dark mode">
+              <i class="fas fa-moon"></i>
+            </button>
+          </li>
+        </div>
+      </div>
+    </nav>
+    
+    <!-- ===== PROFILE/HERO SECTION ===== -->
+    <section id="profile">
+      <!-- Profile picture container -->
+      <div class="section__pic-container">
+        <img src="./assets/mwa.png" alt="Betsaleel Mukuba's profile picture" />
+      </div>
+      
+      <!-- Profile text and call-to-action -->
+      <div class="section__text">
+        <!-- Greeting text -->
+        <p class="section__text__p1">Hi there! Welcome to my portfolio</p>
+        
+        <!-- Name heading -->
+        <h1 class="title">Betsaleel Mukuba</h1>
+        
+        <!-- Job title/role -->
+        <p class="section__text__p2">Frontend Developer & Web Specialist</p>
+        
+        <!-- Brief introduction -->
+        <p class="section__intro">
+          Passionate about creating beautiful, responsive, and user-friendly web experiences. 
+          Specializing in modern web technologies, data analysis, and full-stack development.
+        </p>
+        
+        <!-- Action buttons -->
+        <div class="btn-container">
+          <!-- Download CV button -->
+          <button
+            class="btn btn-color-2"
+            onclick="window.open('./assets/resume-example.pdf')"
+          >
+            Download CV
+          </button>
+          
+          <!-- Contact button -->
+          <button class="btn btn-color-1" onclick="location.href='./contact.html'">
+            Contact Info
+          </button>
+        </div>
+        
+        <!-- Social media icons -->
+        <div id="socials-container">
+          <img
+            src="./assets/linkedin.png"
+            alt="My LinkedIn profile"
+            class="icon"
+            onclick="location.href='https://linkedin.com/'"
+          />
+          <img
+            src="./assets/github.png"
+            alt="My Github profile"
+            class="icon"
+            onclick="location.href='https://github.com/'"
+          />
+        </div>
+      </div>
+    </section>
+    
+    <!-- ===== FOOTER ===== -->
+    <!-- ===== FOOTER ===== -->
+    <footer>
+      <!-- Social media links -->
+      <div class="social-links">
+        <a href="https://wa.me/260969508654" target="_blank" aria-label="WhatsApp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+        <a href="https://linkedin.com/" target="_blank" aria-label="LinkedIn">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="https://facebook.com/" target="_blank" aria-label="Facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+        <a href="https://github.com/" target="_blank" aria-label="GitHub">
+          <i class="fab fa-github"></i>
+        </a>
+      </div>
+      
+      <!-- Copyright notice -->
+      <p>Copyright &#169; 2026 Betsaleel Mukuba. All Rights Reserved.</p>
+    </footer>
+    
+    <!-- JavaScript Files: Common functionality + Page-specific functionality -->
+    <script src="js/common.js"></script>
+    <script src="js/home.js"></script>
+  </body>
+</html>

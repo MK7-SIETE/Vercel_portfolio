@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Meta tags for character encoding and viewport -->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="./assets/favicon.ico" />
+    <link rel="icon" type="image/png" href="./assets/favicon.png" />
+    
+    <!-- Page title -->
+    <title>Contact - Betsaleel Mukuba</title>
+    
+    <!-- CSS Files: Common styles + Page-specific styles + Responsive -->
+    <link rel="stylesheet" href="css/common.css" />
+    <link rel="stylesheet" href="css/contact.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  </head>
+  
+  <body>
+    <!-- ===== DESKTOP NAVIGATION ===== -->
+    <nav id="desktop-nav">
+      <!-- Logo/Brand name -->
+      <div class="logo"><img src="./assets/logo-circuit-bm.svg" alt="BM Circuit Logo" /></div>
+      
+      <!-- Navigation links and theme toggle container -->
+      <div class="nav-right">
+        <!-- Navigation menu -->
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="experience.html">Experience</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="contact.html" class="active">Contact</a></li>
+        </ul>
+        
+        <!-- Dark/Light theme toggle button -->
+        <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">
+          <i class="fas fa-moon"></i>
+        </button>
+      </div>
+    </nav>
+    
+    <!-- ===== MOBILE HAMBURGER NAVIGATION ===== -->
+    <nav id="hamburger-nav">
+      <!-- Logo/Brand name for mobile -->
+      <div class="logo"><img src="./assets/logo-circuit-bm.svg" alt="BM Circuit Logo" /></div>
+      
+      <!-- Hamburger menu container -->
+      <div class="hamburger-menu">
+        <!-- Hamburger icon (three lines) -->
+        <div class="hamburger-icon" onclick="toggleMenu()">
+          <span></span>
+          
+          
+          
+        </div>
+        
+        <!-- Mobile dropdown menu -->
+        <div class="menu-links">
+          <li><a href="index.html" onclick="toggleMenu()">Home</a></li>
+          <li><a href="about.html" onclick="toggleMenu()">About</a></li>
+          <li><a href="experience.html" onclick="toggleMenu()">Experience</a></li>
+          <li><a href="projects.html" onclick="toggleMenu()">Projects</a></li>
+          <li><a href="contact.html" onclick="toggleMenu()">Contact</a></li>
+          <li>
+            <!-- Theme toggle button for mobile -->
+            <button class="theme-toggle-mobile" onclick="toggleTheme()" aria-label="Toggle dark mode">
+              <i class="fas fa-moon"></i>
+            </button>
+          </li>
+        </div>
+      </div>
+    </nav>
+    
+    <!-- ===== CONTACT SECTION ===== -->
+    <section id="contact">
+      <!-- Section heading -->
+      <p class="section__text__p1">Get in Touch</p>
+      <h1 class="title">Let's Connect</h1>
+      <p class="contact-subtitle">I'd love to hear from you. Whether you have a question or just want to say hi, feel free to reach out!</p>
+      
+      <!-- Split Layout Container -->
+      <div class="contact-split-container">
+        
+        <!-- Left Side: Contact Information -->
+        <div class="contact-left">
+          <h2 class="contact-section-title">Contact Information</h2>
+          <p class="contact-intro">Feel free to reach out through any of the following channels:</p>
+          
+          <div class="contact-methods">
+            <!-- Email -->
+            <div class="contact-method-card">
+              <div class="method-icon">
+                <i class="fas fa-envelope"></i>
+              </div>
+              <div class="method-details">
+                <h3>Email</h3>
+                <a href="/cdn-cgi/l/email-protection#1b766e706e797a222e2b5b7c767a727735787476"><span class="__cf_email__" data-cfemail="523f27392730336b676212353f333b3e7c313d3f">[email&#160;protected]</span></a>
+              </div>
+            </div>
+            
+            <!-- Phone -->
+            <div class="contact-method-card">
+              <div class="method-icon">
+                <i class="fas fa-phone"></i>
+              </div>
+              <div class="method-details">
+                <h3>Phone</h3>
+                <a href="tel:+260969508654">+260 96 950 8654</a>
+              </div>
+            </div>
+            
+            <!-- Location -->
+            <div class="contact-method-card">
+              <div class="method-icon">
+                <i class="fas fa-map-marker-alt"></i>
+              </div>
+              <div class="method-details">
+                <h3>Location</h3>
+                <p>Lusaka, Zambia</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Right Side: Social Media -->
+        <div class="contact-right">
+          <h2 class="contact-section-title">Connect on Social Media</h2>
+          <p class="contact-intro">Follow me on social platforms for updates and professional networking:</p>
+          
+          <div class="social-grid">
+            <!-- LinkedIn -->
+            <a href="https://linkedin.com/" target="_blank" class="social-card linkedin">
+              <div class="social-icon">
+                <i class="fab fa-linkedin-in"></i>
+              </div>
+              <div class="social-info">
+                <h3>LinkedIn</h3>
+                <p>Connect professionally</p>
+              </div>
+            </a>
+            
+            <!-- GitHub -->
+            <a href="https://github.com/" target="_blank" class="social-card github">
+              <div class="social-icon">
+                <i class="fab fa-github"></i>
+              </div>
+              <div class="social-info">
+                <h3>GitHub</h3>
+                <p>View my projects</p>
+              </div>
+            </a>
+            
+            <!-- Facebook -->
+            <a href="https://facebook.com/" target="_blank" class="social-card facebook">
+              <div class="social-icon">
+                <i class="fab fa-facebook-f"></i>
+              </div>
+              <div class="social-info">
+                <h3>Facebook</h3>
+                <p>Follow my updates</p>
+              </div>
+            </a>
+            
+            <!-- WhatsApp -->
+            <a href="https://wa.me/260969508654" target="_blank" class="social-card whatsapp">
+              <div class="social-icon">
+                <i class="fab fa-whatsapp"></i>
+              </div>
+              <div class="social-info">
+                <h3>WhatsApp</h3>
+                <p>Quick messaging</p>
+              </div>
+            </a>
+          </div>
+        </div>
+        
+      </div>
+      
+      <!-- Contact Form -->
+      <div class="contact-form-wrapper">
+        <h2 class="form-title">Send Me a Message</h2>
+        <form id="contactForm" class="contact-form">
+          <div class="form-row">
+            <!-- Name input field -->
+            <div class="form-group">
+              <label for="name">Name <span class="required">*</span></label>
+              <input 
+                type="text" 
+                id="name" 
+                name="name" 
+                placeholder="Your full name"
+                required
+              />
+            </div>
+            
+            <!-- Email input field -->
+            <div class="form-group">
+              <label for="email">Email <span class="required">*</span></label>
+              <input 
+                type="email" 
+                id="email" 
+                name="email" 
+                placeholder="you@example.com"
+                required
+              />
+            </div>
+          </div>
+          
+          <!-- Subject field -->
+          <div class="form-group">
+            <label for="subject">Subject</label>
+            <input 
+              type="text" 
+              id="subject" 
+              name="subject" 
+              placeholder="What's this about?"
+            />
+          </div>
+          
+          <!-- Message textarea field -->
+          <div class="form-group">
+            <label for="message">Message <span class="required">*</span></label>
+            <textarea 
+              id="message" 
+              name="message" 
+              placeholder="Write your message here..."
+              rows="6"
+              required
+            ></textarea>
+          </div>
+          
+          <!-- Submit button -->
+          <button type="submit" class="submit-btn">
+            <i class="fas fa-paper-plane"></i>
+            Send Message
+          </button>
+        </form>
+      </div>
+    </section>
+    
+    <!-- ===== FOOTER ===== -->
+    <footer>
+      <!-- Social media links -->
+      <div class="social-links">
+        <a href="https://wa.me/260969508654" target="_blank" aria-label="WhatsApp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+        <a href="https://linkedin.com/" target="_blank" aria-label="LinkedIn">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="https://facebook.com/" target="_blank" aria-label="Facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+        <a href="https://github.com/" target="_blank" aria-label="GitHub">
+          <i class="fab fa-github"></i>
+        </a>
+      </div>
+      
+      <!-- Copyright notice -->
+      <p>Copyright &#169; 2026 Betsaleel Mukuba. All Rights Reserved.</p>
+    </footer>
+    
+    <!-- JavaScript Files: Common functionality + Page-specific -->
+    <script src="js/common.js"></script>
+    <script src="js/contact.js"></script>
+  </body>
+</html>

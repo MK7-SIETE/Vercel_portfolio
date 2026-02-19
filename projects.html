@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="./assets/favicon.ico" />
+    <link rel="icon" type="image/png" href="./assets/favicon.png" />
+    <title>Projects - Betsaleel Mukuba</title>
+    <link rel="stylesheet" href="css/common.css" />
+    <link rel="stylesheet" href="css/projects.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  </head>
+  
+  <body>
+    <!-- ===== DESKTOP NAVIGATION ===== -->
+    <nav id="desktop-nav">
+      <div class="logo"><img src="./assets/logo-circuit-bm.svg" alt="BM Circuit Logo" /></div>
+      <div class="nav-right">
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="experience.html">Experience</a></li>
+          <li><a href="projects.html" class="active">Projects</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">
+          <i class="fas fa-moon"></i>
+        </button>
+      </div>
+    </nav>
+    
+    <!-- ===== MOBILE NAVIGATION ===== -->
+    <nav id="hamburger-nav">
+      <div class="logo"><img src="./assets/logo-circuit-bm.svg" alt="BM Circuit Logo" /></div>
+      <div class="hamburger-menu">
+        <div class="hamburger-icon" onclick="toggleMenu()">
+          <span></span>
+        </div>
+        <div class="menu-links">
+          <li><a href="index.html" onclick="toggleMenu()">Home</a></li>
+          <li><a href="about.html" onclick="toggleMenu()">About</a></li>
+          <li><a href="experience.html" onclick="toggleMenu()">Experience</a></li>
+          <li><a href="projects.html" onclick="toggleMenu()">Projects</a></li>
+          <li><a href="contact.html" onclick="toggleMenu()">Contact</a></li>
+          <li>
+            <button class="theme-toggle-mobile" onclick="toggleTheme()" aria-label="Toggle dark mode">
+              <i class="fas fa-moon"></i>
+            </button>
+          </li>
+        </div>
+      </div>
+    </nav>
+    
+    <!-- ===== PROJECTS SECTION ===== -->
+    <section id="projects">
+      <p class="section__text__p1">Browse My Recent</p>
+      <h1 class="title">Projects</h1>
+      <p class="projects-subtitle">A showcase of my development journey and technical expertise</p>
+      
+      <!-- Projects Grid -->
+      <div class="projects-grid">
+        
+        <!-- Project 1: Portfolio Website -->
+        <div class="project-card" data-project="1">
+          <div class="project-screenshot">
+            <!-- Realistic Portfolio Screenshot -->
+            <div class="screenshot-content portfolio-screenshot">
+              <div class="screenshot-header">
+                <div class="header-left">
+                  <div class="logo-circle">BM</div>
+                  <nav class="screenshot-nav">
+                    <span>Home</span>
+                    <span>About</span>
+                    <span>Projects</span>
+                    <span>Contact</span>
+                  </nav>
+                </div>
+                <div class="theme-icon">☾</div>
+              </div>
+              <div class="screenshot-body">
+                <div class="hero-section">
+                  <p class="hero-greeting">Hi, I'm</p>
+                  <h1 class="hero-name">Betsaleel Mukuba</h1>
+                  <p class="hero-title">Full Stack Developer</p>
+                  <div class="hero-buttons">
+                    <div class="hero-btn">Projects</div>
+                    <div class="hero-btn">Contact</div>
+                  </div>
+                </div>
+                <div class="skills-preview">
+                  <div class="skill-box">HTML</div>
+                  <div class="skill-box">CSS</div>
+                  <div class="skill-box">JavaScript</div>
+                </div>
+              </div>
+            </div>
+            <span class="status-badge status-done">
+              <i class="fas fa-check-circle"></i> Completed
+            </span>
+          </div>
+          
+          <div class="project-info">
+            <h2 class="project-title">Portfolio Website</h2>
+            <p class="project-description">
+              A modern, responsive portfolio website showcasing my skills, projects, and experience. Features dark mode, smooth animations, and a contact form with email integration.
+            </p>
+            
+            <div class="project-actions">
+              <button class="project-btn btn-github" onclick="window.open('#', '_blank')">
+                <i class="fab fa-github"></i> GitHub
+              </button>
+              <button class="project-btn btn-view" onclick="window.open('index.html', '_blank')">
+                <i class="fas fa-external-link-alt"></i> View Project
+              </button>
+              <button class="project-btn btn-details" onclick="openProjectModal(1)">
+                <i class="fas fa-info-circle"></i> View Details
+              </button>
+              <button class="project-btn btn-tech" onclick="toggleTechStack(1)">
+                <i class="fas fa-code"></i> Tech Stack
+              </button>
+            </div>
+            
+            <div class="tech-stack-dropdown" id="tech-1">
+              <div class="tech-stack">
+                <span class="tech-badge tech-html"><i class="fab fa-html5"></i> HTML5</span>
+                <span class="tech-badge tech-css"><i class="fab fa-css3-alt"></i> CSS3</span>
+                <span class="tech-badge tech-js"><i class="fab fa-js"></i> JavaScript</span>
+                <span class="tech-badge tech-node"><i class="fab fa-node-js"></i> Node.js</span>
+                <span class="tech-badge tech-express"><i class="fas fa-server"></i> Express</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Project 2: Mobile Banking System -->
+        <div class="project-card" data-project="2">
+          <div class="project-screenshot">
+            <!-- Realistic Banking App Screenshot -->
+            <div class="screenshot-content banking-screenshot">
+              <div class="terminal-window">
+                <div class="terminal-titlebar">
+                  <div class="terminal-buttons">
+                    <span class="term-btn red"></span>
+                    <span class="term-btn yellow"></span>
+                    <span class="term-btn green"></span>
+                  </div>
+                  <span class="terminal-title">mobile_banking.c - Terminal</span>
+                </div>
+                <div class="terminal-body">
+                  <div class="terminal-line"><span class="term-prompt">$</span> gcc mobile_banking.c -o banking</div>
+                  <div class="terminal-line"><span class="term-prompt">$</span> ./banking</div>
+                  <div class="terminal-output">
+                    <div class="menu-title">═══ MOBILE BANKING SYSTEM ═══</div>
+                    <div class="menu-item">1. Check Balance</div>
+                    <div class="menu-item">2. Deposit Funds</div>
+                    <div class="menu-item">3. Withdraw Cash</div>
+                    <div class="menu-item">4. Transfer Money</div>
+                    <div class="menu-item">5. Transaction History</div>
+                    <div class="menu-item">6. Exit</div>
+                    <div class="menu-prompt">Enter choice: <span class="cursor">█</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <span class="status-badge status-progress">
+              <i class="fas fa-spinner"></i> In Progress
+            </span>
+          </div>
+          
+          <div class="project-info">
+            <h2 class="project-title">Mobile Banking System</h2>
+            <p class="project-description">
+              A command-line banking application built in C, featuring account management, transactions, balance inquiries, and secure authentication with file-based data storage.
+            </p>
+            
+            <div class="project-actions">
+              <button class="project-btn btn-github" onclick="window.open('#', '_blank')">
+                <i class="fab fa-github"></i> GitHub
+              </button>
+              <button class="project-btn btn-coming-soon" disabled>
+                <i class="fas fa-clock"></i> Coming Soon
+              </button>
+              <button class="project-btn btn-details" onclick="openProjectModal(2)">
+                <i class="fas fa-info-circle"></i> View Details
+              </button>
+              <button class="project-btn btn-tech" onclick="toggleTechStack(2)">
+                <i class="fas fa-code"></i> Tech Stack
+              </button>
+            </div>
+            
+            <div class="tech-stack-dropdown" id="tech-2">
+              <div class="tech-stack">
+                <span class="tech-badge tech-c"><i class="fas fa-code"></i> C Programming</span>
+                <span class="tech-badge tech-file"><i class="fas fa-file-code"></i> File I/O</span>
+                <span class="tech-badge tech-algorithms"><i class="fas fa-project-diagram"></i> Algorithms</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Project 3: E-commerce Platform -->
+        <div class="project-card" data-project="3">
+          <div class="project-screenshot">
+            <!-- Realistic E-commerce Screenshot -->
+            <div class="screenshot-content ecommerce-screenshot">
+              <div class="ecom-navbar">
+                <div class="ecom-brand">ShopHub</div>
+                <div class="ecom-search">
+                  <i class="fas fa-search"></i>
+                  <span>Search products...</span>
+                </div>
+                <div class="ecom-icons">
+                  <i class="fas fa-user"></i>
+                  <i class="fas fa-heart"></i>
+                  <i class="fas fa-shopping-cart"></i>
+                  <span class="cart-badge">3</span>
+                </div>
+              </div>
+              <div class="ecom-banner">
+                <h2>Summer Sale</h2>
+                <p>Up to 50% Off</p>
+              </div>
+              <div class="ecom-products">
+                <div class="ecom-product-card">
+                  <div class="product-image"></div>
+                  <div class="product-name">Product 1</div>
+                  <div class="product-price">$29.99</div>
+                </div>
+                <div class="ecom-product-card">
+                  <div class="product-image"></div>
+                  <div class="product-name">Product 2</div>
+                  <div class="product-price">$39.99</div>
+                </div>
+                <div class="ecom-product-card">
+                  <div class="product-image"></div>
+                  <div class="product-name">Product 3</div>
+                  <div class="product-price">$49.99</div>
+                </div>
+              </div>
+            </div>
+            <span class="status-badge status-progress">
+              <i class="fas fa-spinner"></i> In Progress
+            </span>
+          </div>
+          
+          <div class="project-info">
+            <h2 class="project-title">E-commerce Platform</h2>
+            <p class="project-description">
+              A full-stack e-commerce solution with product listings, shopping cart, secure checkout process, and comprehensive admin dashboard for inventory management.
+            </p>
+            
+            <div class="project-actions">
+              <button class="project-btn btn-github" onclick="window.open('#', '_blank')">
+                <i class="fab fa-github"></i> GitHub
+              </button>
+              <button class="project-btn btn-coming-soon" disabled>
+                <i class="fas fa-clock"></i> Coming Soon
+              </button>
+              <button class="project-btn btn-details" onclick="openProjectModal(3)">
+                <i class="fas fa-info-circle"></i> View Details
+              </button>
+              <button class="project-btn btn-tech" onclick="toggleTechStack(3)">
+                <i class="fas fa-code"></i> Tech Stack
+              </button>
+            </div>
+            
+            <div class="tech-stack-dropdown" id="tech-3">
+              <div class="tech-stack">
+                <span class="tech-badge tech-next"><i class="fas fa-react"></i> Next.js</span>
+                <span class="tech-badge tech-react"><i class="fab fa-react"></i> React</span>
+                <span class="tech-badge tech-node"><i class="fab fa-node-js"></i> Node.js</span>
+                <span class="tech-badge tech-db"><i class="fas fa-database"></i> MongoDB</span>
+                <span class="tech-badge tech-stripe"><i class="fab fa-stripe"></i> Stripe</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Project 4: School Management System -->
+        <div class="project-card" data-project="4">
+          <div class="project-screenshot">
+            <!-- Realistic School Portal Screenshot -->
+            <div class="screenshot-content school-screenshot">
+              <div class="school-sidebar">
+                <div class="school-logo">EduPortal</div>
+                <div class="sidebar-menu">
+                  <div class="menu-item active"><i class="fas fa-home"></i> Dashboard</div>
+                  <div class="menu-item"><i class="fas fa-users"></i> Students</div>
+                  <div class="menu-item"><i class="fas fa-chalkboard-teacher"></i> Teachers</div>
+                  <div class="menu-item"><i class="fas fa-book"></i> Courses</div>
+                  <div class="menu-item"><i class="fas fa-chart-line"></i> Reports</div>
+                </div>
+              </div>
+              <div class="school-main">
+                <div class="school-header">
+                  <h3>Dashboard Overview</h3>
+                  <div class="header-actions">
+                    <i class="fas fa-bell"></i>
+                    <div class="user-avatar">A</div>
+                  </div>
+                </div>
+                <div class="school-stats">
+                  <div class="stat-card">
+                    <div class="stat-icon"><i class="fas fa-users"></i></div>
+                    <div class="stat-info">
+                      <div class="stat-number">1,234</div>
+                      <div class="stat-label">Students</div>
+                    </div>
+                  </div>
+                  <div class="stat-card">
+                    <div class="stat-icon"><i class="fas fa-chalkboard-teacher"></i></div>
+                    <div class="stat-info">
+                      <div class="stat-number">89</div>
+                      <div class="stat-label">Teachers</div>
+                    </div>
+                  </div>
+                  <div class="stat-card">
+                    <div class="stat-icon"><i class="fas fa-book"></i></div>
+                    <div class="stat-info">
+                      <div class="stat-number">45</div>
+                      <div class="stat-label">Courses</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <span class="status-badge status-progress">
+              <i class="fas fa-spinner"></i> In Progress
+            </span>
+          </div>
+          
+          <div class="project-info">
+            <h2 class="project-title">School Management System</h2>
+            <p class="project-description">
+              Comprehensive school administration platform handling student records, attendance tracking, grade management, parent-teacher communication, and detailed analytics.
+            </p>
+            
+            <div class="project-actions">
+              <button class="project-btn btn-github" onclick="window.open('#', '_blank')">
+                <i class="fab fa-github"></i> GitHub
+              </button>
+              <button class="project-btn btn-coming-soon" disabled>
+                <i class="fas fa-clock"></i> Coming Soon
+              </button>
+              <button class="project-btn btn-details" onclick="openProjectModal(4)">
+                <i class="fas fa-info-circle"></i> View Details
+              </button>
+              <button class="project-btn btn-tech" onclick="toggleTechStack(4)">
+                <i class="fas fa-code"></i> Tech Stack
+              </button>
+            </div>
+            
+            <div class="tech-stack-dropdown" id="tech-4">
+              <div class="tech-stack">
+                <span class="tech-badge tech-next"><i class="fas fa-react"></i> Next.js</span>
+                <span class="tech-badge tech-react"><i class="fab fa-react"></i> React</span>
+                <span class="tech-badge tech-node"><i class="fab fa-node-js"></i> Node.js</span>
+                <span class="tech-badge tech-db"><i class="fas fa-database"></i> PostgreSQL</span>
+                <span class="tech-badge tech-api"><i class="fas fa-plug"></i> REST API</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </section>
+    
+    <!-- Modal for Project Details -->
+    <div class="modal-overlay" id="projectModal" onclick="closeProjectModal()">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <button class="modal-close" onclick="closeProjectModal()">
+          <i class="fas fa-times"></i>
+        </button>
+        <div class="modal-body" id="modalBody">
+          <!-- Content will be inserted by JavaScript -->
+        </div>
+      </div>
+    </div>
+    
+    <!-- ===== FOOTER ===== -->
+    <footer>
+      <div class="social-links">
+        <a href="https://wa.me/260969508654" target="_blank" aria-label="WhatsApp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+        <a href="https://linkedin.com/" target="_blank" aria-label="LinkedIn">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="https://facebook.com/" target="_blank" aria-label="Facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+        <a href="https://github.com/" target="_blank" aria-label="GitHub">
+          <i class="fab fa-github"></i>
+        </a>
+      </div>
+      <p>Copyright &#169; 2026 Betsaleel Mukuba. All Rights Reserved.</p>
+    </footer>
+    
+    <script src="js/common.js"></script>
+    <script src="js/projects.js"></script>
+  </body>
+</html>

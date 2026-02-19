@@ -1,0 +1,281 @@
+/**
+ * HOME.CSS - Styles specific to the home page (index.html)
+ * Contains: Profile section, social icons, and home page specific layouts
+ */
+
+
+
+/* ===== PROFILE SECTION ===== */
+#profile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5rem;
+  min-height: 80vh;
+  flex-direction: row;
+}
+
+/* Profile picture container */
+.section__pic-container {
+  display: flex;
+  height: 450px;
+  width: 450px;
+  margin: auto 0;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  flex-shrink: 0;
+}
+
+/* Profile picture styling - Perfect circle with solid border */
+.section__pic-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  /* Perfect circular shape */
+  border-radius: 50%;
+  /* Solid border that adapts to theme */
+  border: 5px solid var(--button-bg);
+  /* Subtle shadow for depth */
+  box-shadow: 0 10px 40px var(--shadow), 0 0 0 1px rgba(0, 0, 0, 0.1);
+  transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.3s ease;
+}
+
+.section__pic-container img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 15px 50px var(--shadow), 0 0 0 1px var(--button-hover);
+  border-color: var(--button-hover);
+}
+
+/* Profile text section */
+.section__text {
+  align-self: center;
+  text-align: center;
+  max-width: 600px;
+}
+
+.section__text p {
+  font-weight: 600;
+}
+
+/* Subtitle text (Frontend Developer) */
+.section__text__p2 {
+  font-size: 1.75rem;
+  margin-bottom: 1rem;
+  color: var(--button-bg);
+  font-weight: 600;
+}
+
+/* Introduction paragraph */
+.section__intro {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--secondary-color);
+  margin: 1.5rem auto 2rem;
+  max-width: 550px;
+  text-align: center;
+}
+
+/* Social icons container */
+#socials-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* ===== RESPONSIVE DESIGN FOR HOME PAGE ===== */
+
+/* iPad Pro and smaller tablets (1024px) */
+@media screen and (max-width: 1024px) {
+  #profile {
+    gap: 3rem;
+    margin: 0 5rem;
+  }
+  
+  .section__pic-container {
+    height: 350px;
+    width: 350px;
+  }
+  
+  .title {
+    font-size: 2.5rem;
+  }
+  
+  .section__text__p2 {
+    font-size: 1.5rem;
+  }
+}
+
+/* Tablets and large phones (768px) */
+@media screen and (max-width: 768px) {
+  #profile {
+    flex-direction: column;
+    gap: 2rem;
+    margin: 0 2rem;
+    min-height: auto;
+  }
+  
+  .section__pic-container {
+    height: 300px;
+    width: 300px;
+  }
+  
+  .title {
+    font-size: 2rem;
+  }
+  
+  .section__text__p1 {
+    font-size: 1rem;
+  }
+  
+  .section__text__p2 {
+    font-size: 1.3rem;
+  }
+  
+  .section__intro {
+    font-size: 1rem;
+    margin: 1.2rem auto 1.5rem;
+  }
+  
+  .btn {
+    padding: 0.8rem 1.5rem;
+    min-width: 8rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* iPhone 14 Pro Max, 14 Plus (430px) */
+@media screen and (max-width: 430px) {
+  #profile {
+    margin: 0 1.5rem;
+    padding-top: 2vh;
+  }
+  
+  .section__pic-container {
+    height: 300px;
+    width: 300px;
+  }
+  
+  .section__text__p1 {
+    font-size: 0.95rem;
+  }
+  
+  .title {
+    font-size: 1.8rem;
+  }
+  
+  .section__text__p2 {
+    font-size: 1.2rem;
+  }
+  
+  .section__intro {
+    font-size: 0.95rem;
+    margin: 1rem auto 1.2rem;
+  }
+  
+  .btn-container {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .btn {
+    width: 100%;
+    min-width: 100%;
+  }
+  
+  #socials-container {
+    gap: 1.5rem;
+  }
+  
+  #socials-container .icon {
+    height: 2.2rem;
+  }
+}
+
+/* iPhone 14 Pro, 13 Pro, 12 Pro (393px) */
+@media screen and (max-width: 393px) {
+  .section__pic-container {
+    height: 280px;
+    width: 280px;
+  }
+  
+  .title {
+    font-size: 1.7rem;
+  }
+  
+  .section__text__p2 {
+    font-size: 1.15rem;
+  }
+}
+
+/* iPhone 14, 13, 12 (390px) */
+@media screen and (max-width: 390px) {
+  .section__pic-container {
+    height: 250px;
+    width: 250px;
+  }
+}
+
+/* iPhone 13 mini, 12 mini (375px) */
+@media screen and (max-width: 375px) {
+  #profile {
+    margin: 0 1rem;
+  }
+  
+  .section__pic-container {
+    height: 240px;
+    width: 240px;
+  }
+  
+  .title {
+    font-size: 1.6rem;
+  }
+  
+  .section__text__p1 {
+    font-size: 0.9rem;
+  }
+  
+  .section__text__p2 {
+    font-size: 1.1rem;
+  }
+}
+
+/* iPhone SE (3rd gen), SE (2nd gen) (375px width but same as above) */
+
+/* Older iPhones - iPhone 8, 7, 6s (375px) - covered above */
+
+/* iPhone SE (1st gen) (320px) */
+@media screen and (max-width: 320px) {
+  #profile {
+    margin: 0 0.8rem;
+  }
+  
+  .section__pic-container {
+    height: 220px;
+    width: 220px;
+  }
+  
+  .section__text__p1 {
+    font-size: 0.85rem;
+  }
+  
+  .title {
+    font-size: 1.4rem;
+  }
+  
+  .section__text__p2 {
+    font-size: 1rem;
+  }
+  
+  .btn {
+    padding: 0.7rem 1.2rem;
+    font-size: 0.85rem;
+  }
+  
+  #socials-container .icon {
+    height: 2rem;
+  }
+}

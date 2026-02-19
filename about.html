@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Meta tags for character encoding and viewport -->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="./assets/favicon.ico" />
+    <link rel="icon" type="image/png" href="./assets/favicon.png" />
+    
+    <!-- Page title -->
+    <title>About - Betsaleel Mukuba</title>
+    
+    <!-- CSS Files: Common styles + Page-specific styles + Responsive -->
+    <link rel="stylesheet" href="css/common.css" />
+    <link rel="stylesheet" href="css/about.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  </head>
+  
+  <body>
+    <!-- ===== DESKTOP NAVIGATION ===== -->
+    <nav id="desktop-nav">
+      <!-- Logo/Brand name -->
+      <div class="logo"><img src="./assets/logo-circuit-bm.svg" alt="BM Circuit Logo" /></div>
+      
+      <!-- Navigation links and theme toggle container -->
+      <div class="nav-right">
+        <!-- Navigation menu -->
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html" class="active">About</a></li>
+          <li><a href="experience.html">Experience</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        
+        <!-- Dark/Light theme toggle button -->
+        <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">
+          <i class="fas fa-moon"></i>
+        </button>
+      </div>
+    </nav>
+    
+    <!-- ===== MOBILE HAMBURGER NAVIGATION ===== -->
+    <nav id="hamburger-nav">
+      <!-- Logo/Brand name for mobile -->
+      <div class="logo"><img src="./assets/logo-circuit-bm.svg" alt="BM Circuit Logo" /></div>
+      
+      <!-- Hamburger menu container -->
+      <div class="hamburger-menu">
+        <!-- Hamburger icon (three lines) -->
+        <div class="hamburger-icon" onclick="toggleMenu()">
+          <span></span>
+          
+          
+          
+        </div>
+        
+        <!-- Mobile dropdown menu -->
+        <div class="menu-links">
+          <li><a href="index.html" onclick="toggleMenu()">Home</a></li>
+          <li><a href="about.html" onclick="toggleMenu()">About</a></li>
+          <li><a href="experience.html" onclick="toggleMenu()">Experience</a></li>
+          <li><a href="projects.html" onclick="toggleMenu()">Projects</a></li>
+          <li><a href="contact.html" onclick="toggleMenu()">Contact</a></li>
+          <li>
+            <!-- Theme toggle button for mobile -->
+            <button class="theme-toggle-mobile" onclick="toggleTheme()" aria-label="Toggle dark mode">
+              <i class="fas fa-moon"></i>
+            </button>
+          </li>
+        </div>
+      </div>
+    </nav>
+    
+    <!-- ===== ABOUT SECTION ===== -->
+    <section id="about">
+      <!-- Section heading -->
+      <p class="section__text__p1">Get To Know More</p>
+      <h1 class="title">About Me</h1>
+      
+      <!-- Main about content container -->
+      <div class="section-container">
+        <!-- About picture -->
+        <div class="section__pic-container">
+          <img
+            src="./assets/about-pic.png"
+            alt="Profile picture"
+            class="about-pic"
+          />
+        </div>
+        
+        <!-- About details and information -->
+        <div class="about-details-container">
+          <!-- Experience and Education cards -->
+          <div class="about-containers">
+            <!-- Experience card -->
+            <div class="details-container">
+              <img
+                src="./assets/experience.png"
+                alt="Experience icon"
+                class="icon"
+              />
+              <h3>Experience</h3>
+              <p>2 years <br />Fullstack Development</p>
+            </div>
+            
+            <!-- Education card -->
+            <div class="details-container">
+              <img
+                src="./assets/education.png"
+                alt="Education icon"
+                class="icon"
+              />
+              <h3>Education</h3>
+              <p>Certified Software Engineer<br/><br/>Certified Computer Scientist</p>
+            </div>
+          </div>
+          
+          <!-- About text description -->
+          <div class="text-container">
+            <p>
+              I'm a passionate frontend developer with expertise in building modern, responsive web applications. With a strong foundation in computer science and software engineering, I specialize in creating intuitive user interfaces that combine aesthetic design with functional excellence.
+            </p>
+            <p class="about-detail">
+              <strong>What Drives Me:</strong> I believe that great software should be accessible, beautiful, and solve real problems. Every line of code I write is an opportunity to make someone's digital experience better. I'm driven by the challenge of transforming complex requirements into elegant, user-friendly solutions.
+            </p>
+            <p class="about-detail">
+              <strong>My Learning Philosophy:</strong> Technology evolves rapidly, and I embrace continuous learning as a core value. I stay current with industry trends, experiment with new frameworks, and regularly challenge myself with side projects. I believe the best developers are those who never stop being students.
+            </p>
+            <p class="about-detail">
+              <strong>Beyond Coding:</strong> When I'm not writing code, you'll find me exploring new technologies, or sharing knowledge with the developer community. I enjoy problem-solving, whether it's debugging a tricky issue or finding ways to optimize performance. I also value work-life balance and believe creativity thrives when we take time to recharge.
+            </p>
+            <p class="about-detail">
+              <strong>Core Values:</strong>Time, Integrity, collaboration, and excellence guide my work. I believe in writing clean, maintainable code, clear documentation, and building solutions that stand the test of time. I'm a strong communicator who values teamwork and believes the best results come from diverse perspectives working together.
+            </p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Arrow navigation to next page -->
+      <img
+        src="./assets/arrow.png"
+        alt="Arrow icon"
+        class="icon arrow"
+        onclick="location.href='./experience.html'"
+      />
+    </section>
+    
+    <!-- ===== FOOTER ===== -->
+    <!-- ===== FOOTER ===== -->
+    <footer>
+      <!-- Social media links -->
+      <div class="social-links">
+        <a href="https://wa.me/260969508654" target="_blank" aria-label="WhatsApp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+        <a href="https://linkedin.com/" target="_blank" aria-label="LinkedIn">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="https://facebook.com/" target="_blank" aria-label="Facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+        <a href="https://github.com/" target="_blank" aria-label="GitHub">
+          <i class="fab fa-github"></i>
+        </a>
+      </div>
+      
+      <!-- Copyright notice -->
+      <p>Copyright &#169; 2026 Betsaleel Mukuba. All Rights Reserved.</p>
+    </footer>
+    
+    <!-- JavaScript Files: Common functionality + Page-specific functionality -->
+    <script src="js/common.js"></script>
+    <script src="js/about.js"></script>
+  </body>
+</html>

@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="./assets/favicon.ico" />
+    <link rel="icon" type="image/png" href="./assets/favicon.png" />
+    <title>Experience - Betsaleel Mukuba</title>
+    <link rel="stylesheet" href="css/common.css" />
+    <link rel="stylesheet" href="css/experience-masonry.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  </head>
+  
+  <body>
+    <!-- ===== DESKTOP NAVIGATION ===== -->
+    <nav id="desktop-nav">
+      <div class="logo">
+        <img src="./assets/logo-circuit-bm.svg" alt="BM Circuit Logo" />
+      </div>
+      <div class="nav-right">
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="experience.html" class="active">Experience</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">
+          <i class="fas fa-moon"></i>
+        </button>
+      </div>
+    </nav>
+    
+    <!-- ===== MOBILE NAVIGATION ===== -->
+    <nav id="hamburger-nav">
+      <div class="logo">
+        <img src="./assets/logo-circuit-bm.svg" alt="BM Circuit Logo" />
+      </div>
+      <div class="hamburger-menu">
+        <div class="hamburger-icon" onclick="toggleMenu()">
+          <span></span>
+        </div>
+        <div class="menu-links">
+          <li><a href="index.html" onclick="toggleMenu()">Home</a></li>
+          <li><a href="about.html" onclick="toggleMenu()">About</a></li>
+          <li><a href="experience.html" onclick="toggleMenu()">Experience</a></li>
+          <li><a href="projects.html" onclick="toggleMenu()">Projects</a></li>
+          <li><a href="contact.html" onclick="toggleMenu()">Contact</a></li>
+          <li>
+            <button class="theme-toggle-mobile" onclick="toggleTheme()" aria-label="Toggle dark mode">
+              <i class="fas fa-moon"></i>
+            </button>
+          </li>
+        </div>
+      </div>
+    </nav>
+    
+    <!-- ===== EXPERIENCE SECTION ===== -->
+    <section id="experience">
+      <p class="section__text__p1">Explore My</p>
+      <h1 class="title">Technical Skills & Expertise</h1>
+      <p class="section__description">Click on any category to explore my skills</p>
+      
+      <div class="experience-details-container">
+        
+        <!-- MS Office Suite -->
+        <div class="skill-category">
+          <div class="category-header-wrapper" onclick="toggleCategoryMasonry(this)">
+            <div class="category-header-content">
+              <i class="fas fa-briefcase"></i>
+              <h2 class="category-title-text">Microsoft Office Suite</h2>
+            </div>
+            <i class="fas fa-chevron-down category-expand-icon"></i>
+          </div>
+          <div class="skills-masonry-wrapper">
+            <div class="skills-masonry">
+              <div class="skill-card-masonry" onclick="openSkillModal('word')">
+                <div class="skill-icon-masonry"><i class="fas fa-file-word"></i></div>
+                <h3 class="skill-name-masonry">Microsoft Word</h3>
+                <p class="skill-level-masonry">Experienced</p>
+              </div>
+              <div class="skill-card-masonry" onclick="openSkillModal('excel')">
+                <div class="skill-icon-masonry"><i class="fas fa-file-excel"></i></div>
+                <h3 class="skill-name-masonry">Microsoft Excel</h3>
+                <p class="skill-level-masonry">Experienced</p>
+              </div>
+              <div class="skill-card-masonry" onclick="openSkillModal('powerpoint')">
+                <div class="skill-icon-masonry"><i class="fas fa-file-powerpoint"></i></div>
+                <h3 class="skill-name-masonry">PowerPoint</h3>
+                <p class="skill-level-masonry">Experienced</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Web Development -->
+        <div class="skill-category">
+          <div class="category-header-wrapper" onclick="toggleCategoryMasonry(this)">
+            <div class="category-header-content">
+              <i class="fas fa-code"></i>
+              <h2 class="category-title-text">Web Development</h2>
+            </div>
+            <i class="fas fa-chevron-down category-expand-icon"></i>
+          </div>
+          <div class="skills-masonry-wrapper">
+            <div class="skills-masonry">
+              <div class="skill-card-masonry" onclick="openSkillModal('html')">
+                <div class="skill-icon-masonry"><i class="fab fa-html5"></i></div>
+                <h3 class="skill-name-masonry">HTML</h3>
+                <p class="skill-level-masonry">Experienced</p>
+              </div>
+              <div class="skill-card-masonry" onclick="openSkillModal('css')">
+                <div class="skill-icon-masonry"><i class="fab fa-css3-alt"></i></div>
+                <h3 class="skill-name-masonry">CSS</h3>
+                <p class="skill-level-masonry">Experienced</p>
+              </div>
+              <div class="skill-card-masonry" onclick="openSkillModal('javascript')">
+                <div class="skill-icon-masonry"><i class="fab fa-js"></i></div>
+                <h3 class="skill-name-masonry">JavaScript</h3>
+                <p class="skill-level-masonry">Intermediate</p>
+              </div>
+              <div class="skill-card-masonry" onclick="openSkillModal('php')">
+                <div class="skill-icon-masonry"><i class="fab fa-php"></i></div>
+                <h3 class="skill-name-masonry">PHP</h3>
+                <p class="skill-level-masonry">Intermediate</p>
+              </div>
+              <div class="skill-card-masonry" onclick="openSkillModal('nextjs')">
+                <div class="skill-icon-masonry"><i class="fas fa-react"></i></div>
+                <h3 class="skill-name-masonry">Next.js</h3>
+                <p class="skill-level-masonry">Learning</p>
+              </div>
+              <div class="skill-card-masonry" onclick="openSkillModal('react')">
+                <div class="skill-icon-masonry"><i class="fab fa-react"></i></div>
+                <h3 class="skill-name-masonry">React</h3>
+                <p class="skill-level-masonry">Intermediate</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Database & Data Analysis -->
+        <div class="skill-category">
+          <div class="category-header-wrapper" onclick="toggleCategoryMasonry(this)">
+            <div class="category-header-content">
+              <i class="fas fa-database"></i>
+              <h2 class="category-title-text">Database & Data Analysis</h2>
+            </div>
+            <i class="fas fa-chevron-down category-expand-icon"></i>
+          </div>
+          <div class="skills-masonry-wrapper">
+            <div class="skills-masonry">
+              <div class="skill-card-masonry" onclick="openSkillModal('mysql')">
+                <div class="skill-icon-masonry"><i class="fas fa-database"></i></div>
+                <h3 class="skill-name-masonry">MySQL</h3>
+                <p class="skill-level-masonry">Intermediate</p>
+              </div>
+              <div class="skill-card-masonry" onclick="openSkillModal('data-excel')">
+                <div class="skill-icon-masonry"><i class="fas fa-chart-line"></i></div>
+                <h3 class="skill-name-masonry">Data Analysis (Excel)</h3>
+                <p class="skill-level-masonry">Intermediate</p>
+              </div>
+              <div class="skill-card-masonry" onclick="openSkillModal('data-mysql')">
+                <div class="skill-icon-masonry"><i class="fas fa-chart-bar"></i></div>
+                <h3 class="skill-name-masonry">Data Analysis (MySQL)</h3>
+                <p class="skill-level-masonry">Intermediate</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Programming Languages -->
+        <div class="skill-category">
+          <div class="category-header-wrapper" onclick="toggleCategoryMasonry(this)">
+            <div class="category-header-content">
+              <i class="fas fa-laptop-code"></i>
+              <h2 class="category-title-text">Programming Languages</h2>
+            </div>
+            <i class="fas fa-chevron-down category-expand-icon"></i>
+          </div>
+          <div class="skills-masonry-wrapper">
+            <div class="skills-masonry">
+              <div class="skill-card-masonry" onclick="openSkillModal('c')">
+                <div class="skill-icon-masonry"><i class="fas fa-code"></i></div>
+                <h3 class="skill-name-masonry">C Programming</h3>
+                <p class="skill-level-masonry">Intermediate</p>
+              </div>
+              <div class="skill-card-masonry" onclick="openSkillModal('python')">
+                <div class="skill-icon-masonry"><i class="fab fa-python"></i></div>
+                <h3 class="skill-name-masonry">Python</h3>
+                <p class="skill-level-masonry">Intermediate</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+      
+      <img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='./projects.html'" />
+    </section>
+    
+    <!-- Skill Detail Modal -->
+    <div id="skillModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeSkillModal()">&times;</span>
+        <div class="modal-header">
+          <div class="modal-icon" id="modalIcon"></div>
+          <h2 id="modalTitle"></h2>
+        </div>
+        <div class="modal-body">
+          <h3>What I've Built</h3>
+          <p id="modalDescription"></p>
+        </div>
+      </div>
+    </div>
+    
+    <!-- ===== FOOTER ===== -->
+    <footer>
+      <div class="social-links">
+        <a href="https://wa.me/260969508654" target="_blank" aria-label="WhatsApp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+        <a href="https://linkedin.com/" target="_blank" aria-label="LinkedIn">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="https://facebook.com/" target="_blank" aria-label="Facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+        <a href="https://github.com/" target="_blank" aria-label="GitHub">
+          <i class="fab fa-github"></i>
+        </a>
+      </div>
+      <p>Copyright &#169; 2026 Betsaleel Mukuba. All Rights Reserved.</p>
+    </footer>
+    
+    <script src="js/common.js"></script>
+    <script src="js/experience.js"></script>
+  </body>
+</html>
